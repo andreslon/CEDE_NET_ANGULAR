@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <span>Nombre:</span>
+        <input type="text" id="txtNombre" />
+        <input type="button" value="Guardar" onclick="guardar()" />
+    </div>
+
+    <script>
+    //Event binding 
+    function guardar(){
+            alert("Guardado con exito " + document.getElementById("txtNombre").value);
+    } 
+
+    //Property binding
+    var nombreBase;
+    nombreBase="Andrés Londoño";
+    document.getElementById("txtNombre").value=nombreBase;
+    </script>
+    
+</body>
+</html>
