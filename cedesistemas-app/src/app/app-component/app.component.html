@@ -1,8 +1,13 @@
 
+
+<header-app></header-app>
+
 <div>
   <span>{{lblNombre.toUpperCase()}}</span>
   <input type="text" value="{{nombreBase}}" >
-  <input type="button" value="{{lblGuardar}}" (click)="Guardar()">
+
+
+  <button mat-button (click)="Guardar()">{{lblGuardar}}</button>
 </div>
 
 <router-outlet></router-outlet>
