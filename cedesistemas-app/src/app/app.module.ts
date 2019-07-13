@@ -11,6 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { UsersModule } from './users/users.module';
 import { SharedModule } from './shared/shared.module';
 
+
+
+import { TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {  TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +28,21 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     MaterialModule,
     UsersModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader:{
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}

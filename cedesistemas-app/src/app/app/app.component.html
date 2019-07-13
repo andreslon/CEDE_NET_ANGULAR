@@ -3,7 +3,10 @@
 >
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-    <h1 class="example-app-name">Responsive App</h1>
+    <h1 class="example-app-name">{{'title' | translate }}</h1>
+    <button mat-button (click)="changeLanguage('en')">EN</button>
+    <button mat-button (click)="changeLanguage('es')">ES</button>
+    <button mat-button (click)="changeLanguage('kr')">KR</button>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container"

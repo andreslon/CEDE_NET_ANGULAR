@@ -1,0 +1,5 @@
+{
+    "title":"Welcome to Angular Course",
+    "message":"Hi from EN",
+    "greeting":"Hi {{name}}!"
+}

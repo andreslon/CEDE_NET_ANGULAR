@@ -1,4 +1,38 @@
 <mat-card>
+  <h1>Translate</h1>
+
+  <p>
+    <b>Pipes: </b>
+    {{'message' | translate }}
+  </p>
+  <p>
+    <b>Directives as attribute: </b>
+    <label [translate]="'message'"></label>
+  </p>
+  <p>
+    <b>Directives as content: </b>
+    <label translate>message</label>
+  </p>
+
+<h3>Passing parameters</h3>
+
+  <p>
+      <b>Pipes: </b>
+      {{'greeting' | translate:{'name':'Andrés'} }}
+    </p>
+    <p>
+      <b>Directives as attribute: </b>
+      <label [translate]="'greeting'" [translateParams]="{'name':'Andrés'}"></label>
+    </p>
+    <p>
+      <b>Directives as content: </b>
+      <label translate [translateParams]="{'name':'Andrés'}">greeting</label>
+    </p>
+
+
+
+</mat-card>
+<mat-card>
   <h1>Pipes |</h1>
 
   <p>{{nombreBase | uppercase}}</p>
@@ -8,9 +42,9 @@
 
   <p>{{ranking | rankingcolor}}</p>
 
-<img src="{{ranking | rankingcolor}}" style="height: 40px;" />
+  <img src="{{ranking | rankingcolor}}" style="height: 40px;" />
 
-<img src="{{'2' | rankingcolor}}" style="height: 40px;" />
+  <img src="{{'2' | rankingcolor}}" style="height: 40px;" />
 
 </mat-card>
 
