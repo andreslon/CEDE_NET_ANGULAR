@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 
 import {  welcomePipe } from './shared/pipes/welcome-pipe';
 import { RankingColorPipe } from './shared/pipes/rankingcolor-pipe';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RankingColorPipe } from './shared/pipes/rankingcolor-pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
