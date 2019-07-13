@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
   edad: number = 30;
   visible: boolean = false;
   nombres: string[] = ['juan', 'andres', 'pedro'];
+
+
+  ranking: number=5;
+
   constructor() { }
 
   ngOnInit() {

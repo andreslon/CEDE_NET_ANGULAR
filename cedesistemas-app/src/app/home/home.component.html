@@ -1,5 +1,23 @@
+<mat-card>
+  <h1>Pipes |</h1>
+
+  <p>{{nombreBase | uppercase}}</p>
+  <p>{{nombreBase | lowercase}}</p>
+
+  <p>{{nombreBase | welcome}}</p>
+
+  <p>{{ranking | rankingcolor}}</p>
+
+<img src="{{ranking | rankingcolor}}" style="height: 40px;" />
+
+<img src="{{'2' | rankingcolor}}" style="height: 40px;" />
+
+</mat-card>
+
+
+
 <div>
   <span>{{lblNombre.toUpperCase()}}</span>
-  <input type="text" value="{{nombreBase}}" >
+  <input type="text" value="{{nombreBase}}">
   <button mat-button (click)="Guardar()">{{lblGuardar}}</button>
-</div> 
+</div>
