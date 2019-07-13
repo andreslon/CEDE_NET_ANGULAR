@@ -1,37 +1,31 @@
-import { Component } from '@angular/core';
+
+
+import {MediaMatcher} from '@angular/cdk/layout';
+import {ChangeDetectorRef, Component, OnDestroy, AfterViewInit, OnInit} from '@angular/core';
+
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements  OnDestroy{ 
 
-  private lblNombre = "Nombre:";
-  public nombreBase = "Andrés Londoño";
-  lblGuardar = "Guardar";
-  cadena: string = "Hola!";
-  edad: number = 30;
-  visible: boolean = false;
-  nombres: string[] = ['juan', 'andres', 'pedro'];
+  mobileQuery: MediaQueryList;
+  private _mobileQueryListener: () => void;
 
-  constructor() {
- 
-      
-    
+  
+
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
   }
-  Guardar() {
-    const resultado1 = this.sumarTs(1, 2);
-    var resultado2 = this.sumarTs(1, 2);
-    let resultado3 = this.sumarTs(1, 2);
-    let resultado4 = sumarJs(1, 2);
-    alert("Guardado exitosamente " + this.nombreBase);
+  ngOnDestroy(): void {
+    this.mobileQuery.removeListener(this._mobileQueryListener);
   }
-  sumarTs(n1: number, n2: number): number {
-    return n1 + n2;
-  }
+  
 }
 
-function sumarJs(n1, n2) {
-  return n1 + n2;
-}
+
