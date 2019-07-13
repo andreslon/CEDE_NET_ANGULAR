@@ -7,24 +7,22 @@ import { MaterialModule } from './material.module';
  
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
-
-import {  welcomePipe } from './shared/pipes/welcome-pipe';
-import { RankingColorPipe } from './shared/pipes/rankingcolor-pipe';
+ 
 import { UsersModule } from './users/users.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent,
-    welcomePipe,
-    RankingColorPipe
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    UsersModule
+    UsersModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
