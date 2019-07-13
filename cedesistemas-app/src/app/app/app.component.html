@@ -1,9 +1,4 @@
 
-<!--  
-
-
-<router-outlet></router-outlet>  -->
-
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches" 
 >
   <mat-toolbar color="primary" class="example-toolbar">
@@ -21,7 +16,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-     <app-home></app-home>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
