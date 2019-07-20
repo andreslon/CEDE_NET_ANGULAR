@@ -6,7 +6,6 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using cedesistemas_api.Models;
@@ -15,19 +14,19 @@ namespace cedesistemas_api.Controllers
 {
     public class UsersController : ApiController
     {
-        private CedesistemasEntities db = new CedesistemasEntities();
+        private Entities db = new Entities();
 
         // GET: api/Users
-        public IQueryable<users> Getusers()
+        public IQueryable<Users> GetUsers()
         {
-            return db.users;
+            return db.Users;
         }
 
         // GET: api/Users/5
-        [ResponseType(typeof(users))]
-        public async Task<IHttpActionResult> Getusers(int id)
+        [ResponseType(typeof(Users))]
+        public IHttpActionResult GetUsers(int id)
         {
-            users users = await db.users.FindAsync(id);
+            Users users = db.Users.Find(id);
             if (users == null)
             {
                 return NotFound();
@@ -38,7 +37,7 @@ namespace cedesistemas_api.Controllers
 
         // PUT: api/Users/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> Putusers(int id, users users)
+        public IHttpActionResult PutUsers(int id, Users users)
         {
             if (!ModelState.IsValid)
             {
@@ -54,11 +53,11 @@ namespace cedesistemas_api.Controllers
 
             try
             {
-                await db.SaveChangesAsync();
+                db.SaveChanges();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!usersExists(id))
+                if (!UsersExists(id))
                 {
                     return NotFound();
                 }
@@ -72,32 +71,32 @@ namespace cedesistemas_api.Controllers
         }
 
         // POST: api/Users
-        [ResponseType(typeof(users))]
-        public async Task<IHttpActionResult> Postusers(users users)
+        [ResponseType(typeof(Users))]
+        public IHttpActionResult PostUsers(Users users)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.users.Add(users);
-            await db.SaveChangesAsync();
+            db.Users.Add(users);
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = users.Id }, users);
         }
 
         // DELETE: api/Users/5
-        [ResponseType(typeof(users))]
-        public async Task<IHttpActionResult> Deleteusers(int id)
+        [ResponseType(typeof(Users))]
+        public IHttpActionResult DeleteUsers(int id)
         {
-            users users = await db.users.FindAsync(id);
+            Users users = db.Users.Find(id);
             if (users == null)
             {
                 return NotFound();
             }
 
-            db.users.Remove(users);
-            await db.SaveChangesAsync();
+            db.Users.Remove(users);
+            db.SaveChanges();
 
             return Ok(users);
         }
@@ -111,9 +110,9 @@ namespace cedesistemas_api.Controllers
             base.Dispose(disposing);
         }
 
-        private bool usersExists(int id)
+        private bool UsersExists(int id)
         {
-            return db.users.Count(e => e.Id == id) > 0;
+            return db.Users.Count(e => e.Id == id) > 0;
         }
     }
 }

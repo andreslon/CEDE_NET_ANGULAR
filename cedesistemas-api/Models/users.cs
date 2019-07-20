@@ -12,14 +12,14 @@ namespace cedesistemas_api.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class users
+    public partial class Users
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public int Nit { get; set; }
-        public System.DateTime BirthDay { get; set; }
-        public bool IsAdmin { get; set; }
-        public int Ranking { get; set; }
+        public Nullable<int> Nit { get; set; }
+        public Nullable<System.DateTime> BirthDay { get; set; }
+        public Nullable<bool> IsAdmin { get; set; }
+        public Nullable<int> Ranking { get; set; }
     }
 }
