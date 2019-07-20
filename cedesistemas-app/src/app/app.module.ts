@@ -16,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
 import { TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {  TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HomeComponent
   ],
   imports: [
+    FormsModule,
+
     BrowserModule,
     AppRoutingModule,
     MaterialModule,

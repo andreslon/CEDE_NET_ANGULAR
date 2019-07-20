@@ -1,5 +1,13 @@
 {
     "title":"Welcome to Angular Course",
     "message":"Hi from EN",
-    "greeting":"Hi {{name}}!"
+    "greeting":"Hi {{name}}!",
+    "User":{
+        "Name":"Name",
+        "LastName":"Last Name",
+        "Nit":"Nit",
+        "BirthDay":"BirthDay",
+        "Admin":"Administrator",
+        "Ranking":"Ranking"
+    }
 }
