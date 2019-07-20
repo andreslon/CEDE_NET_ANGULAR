@@ -5,6 +5,7 @@ import { UsersService } from '../users.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -18,13 +19,18 @@ export class ListComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  constructor(private usersService: UsersService, private dialog: MatDialog, private translate: TranslateService) { }
+  constructor(
+    private usersService: UsersService, 
+    private dialog: MatDialog, 
+    private translate: TranslateService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.load();
   }
   load() {
-    this.usersService.get().subscribe(
+    this.usersService.getAll().subscribe(
       (data: UserModel[]) => {
         this.isLoading = false;
         this.dataSource = new MatTableDataSource(data);
@@ -36,8 +42,7 @@ export class ListComponent implements OnInit {
     );
   }
   delete(element: UserModel) {
-
-
+ 
     this.translate.get("User.DeleteMessage").subscribe((msg:string)=>{
 
       let dialogResponse = this.dialog.open(DialogComponent, {
@@ -63,10 +68,9 @@ export class ListComponent implements OnInit {
       });
 
     });
-
-
-   
-
+ 
   }
-
+  edit(userId){
+     this.router.navigate(["/users/add", {id: userId}]);
+  }
 }
