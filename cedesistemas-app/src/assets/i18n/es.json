@@ -8,6 +8,7 @@
         "Nit":"CC",
         "BirthDay":"Fecha de nacimiento",
         "Admin":"Administrador",
-        "Ranking":"Calificación"
+        "Ranking":"Calificación",
+        "DeleteMessage":"¿Estás seguro que deseas eliminar este registro?"
     }
 }
