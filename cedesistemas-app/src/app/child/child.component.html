@@ -1,0 +1,13 @@
+<div class="container">
+  <mat-card class="card">
+    <h2>Child</h2>
+    <form autocomplete="off">
+      <mat-form-field>
+        <input matInput placeholder="Text child" #InputChild (keyup)="onKeyUp(InputChild.value)" />
+      </mat-form-field>
+    </form>
+    <p>
+      <b>From parent: </b> {{ParentValue}}
+    </p>
+  </mat-card>
+</div>

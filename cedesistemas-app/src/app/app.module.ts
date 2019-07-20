@@ -17,12 +17,16 @@ import { TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {  TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     FormsModule,
