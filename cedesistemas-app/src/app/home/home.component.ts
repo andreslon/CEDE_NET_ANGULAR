@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -14,11 +15,20 @@ export class HomeComponent implements OnInit {
   edad: number = 30;
   visible: boolean = false;
   nombres: string[] = ['juan', 'andres', 'pedro'];
-
-
   ranking: number=5;
 
-  constructor() { }
+  private myText:string;
+  
+  constructor(private translate: TranslateService) { 
+   
+  }
+
+  showDialog(){
+    let params= {'name':this.myText};
+    this.translate.get("greeting",params).subscribe((message:string)=>{
+        alert(message);
+    });
+  }
 
   ngOnInit() {
   }

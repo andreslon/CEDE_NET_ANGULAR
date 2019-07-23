@@ -1,5 +1,14 @@
 {
     "title":"Bienvenido a el curso de Angular",
     "message":"Hola desde ES",
-    "greeting":"Hola {{name}}!"
+    "greeting":"Hola {{name}}!",
+    "User":{
+        "Name":"Nombre",
+        "LastName":"Apellido",
+        "Nit":"CC",
+        "BirthDay":"Fecha de nacimiento",
+        "Admin":"Administrador",
+        "Ranking":"Calificación",
+        "DeleteMessage":"¿Estás seguro que deseas eliminar este registro?"
+    }
 }

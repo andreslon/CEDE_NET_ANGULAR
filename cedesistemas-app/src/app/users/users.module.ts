@@ -6,6 +6,8 @@ import { ROUTES } from './users.routes';
 import { MaterialModule } from '../material.module';
 import { AddEditComponent } from './add-edit/add-edit.component'; 
 import { SharedModule } from '../shared/shared.module';
+import { UsersService } from './users.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ListComponent, AddEditComponent],
@@ -13,7 +15,10 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     RouterModule.forChild(ROUTES),
     MaterialModule,
-    SharedModule
-  ]
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers:[UsersService]
 })
 export class UsersModule { }

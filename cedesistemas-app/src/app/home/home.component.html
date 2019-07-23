@@ -14,21 +14,26 @@
     <label translate>message</label>
   </p>
 
-<h3>Passing parameters</h3>
-
+  <h3>Passing parameters</h3>
   <p>
-      <b>Pipes: </b>
-      {{'greeting' | translate:{'name':'Andrés'} }}
-    </p>
-    <p>
-      <b>Directives as attribute: </b>
-      <label [translate]="'greeting'" [translateParams]="{'name':'Andrés'}"></label>
-    </p>
-    <p>
-      <b>Directives as content: </b>
-      <label translate [translateParams]="{'name':'Andrés'}">greeting</label>
-    </p>
+    <b>Pipes: </b>
+    {{'greeting' | translate:{'name':'Andrés'} }}
+  </p>
+  <p>
+    <b>Directives as attribute: </b>
+    <label [translate]="'greeting'" [translateParams]="{'name':'Andrés'}"></label>
+  </p>
+  <p>
+    <b>Directives as content: </b>
+    <label translate [translateParams]="{'name':'Andrés'}">greeting</label>
+  </p>
+  <h3>From Typescript</h3>
 
+  <mat-form-field >
+    <input matInput [(ngModel)]="myText" placeholder="Say something" >
+  </mat-form-field>
+  
+  <button mat-button (click)="showDialog()">Say!</button>
 
 
 </mat-card>

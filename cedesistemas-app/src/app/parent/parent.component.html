@@ -1,0 +1,19 @@
+
+<div class="container">
+  <mat-card>
+    <h2>Parent</h2>
+    <form autocomplete="off">
+      <mat-form-field>
+        <input matInput placeholder="Text parent" #inputPadre/>
+      </mat-form-field>
+    </form>
+    
+    <p>
+      <b>From child: </b> {{ChildValue}}
+    </p>
+    
+    <app-child [ParentValue]="inputPadre.value" (ChildEvent)="ChildValue=$event"></app-child>
+  </mat-card>
+</div>
+
+ 
