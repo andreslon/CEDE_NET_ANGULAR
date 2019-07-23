@@ -9,9 +9,10 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using cedesistemas_api.Models;
-
+using System.Web.Http.Cors;
 namespace cedesistemas_api.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class UsersController : ApiController
     {
         private Entities db = new Entities();
