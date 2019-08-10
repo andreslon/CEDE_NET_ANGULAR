@@ -1,3 +1,46 @@
+
+<mat-card>
+    <h1>
+      Rxjs
+    </h1> 
+  
+        <div>
+            1) Creacion de observable - Streaming
+            <b *ngFor="let msg of ObservableMsgs">
+                {{msg}}
+            </b>
+        </div>
+        <div>
+            2) Observable - Eventos del DOM
+            <b *ngFor="let msg of clicksMsgs">
+                {{msg}}
+            </b>
+        </div>
+        <div>
+            3) Observable - Timer por intervalo
+            <button mat-button (click)="llamarTimerInterval()" >Llamar timer interval</button>
+            <b *ngFor="let msg of timerIntervalMsgs">
+                {{msg}}
+            </b>
+        </div>
+        <div>
+            4) Observable - Timer 
+            <button mat-button (click)="llamarTimer()" >Llamar timer</button>
+            <b *ngFor="let msg of timerMsgs">
+                {{msg}}
+            </b>
+        </div>
+<div>
+    5) Observable con valores estaticos
+    <b *ngFor="let msg of staticMsgs">
+        {{msg}}
+    </b>
+</div>
+
+  
+  </mat-card>
+
+
 <mat-card>
   <h1>Translate</h1>
 
@@ -60,3 +103,5 @@
   <input type="text" value="{{nombreBase}}">
   <button mat-button (click)="Guardar()">{{lblGuardar}}</button>
 </div>
+
+

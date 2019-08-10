@@ -5,7 +5,7 @@ import { UserModel } from './user.model';
 
 @Injectable()
 export class UsersService{
-    private baseUrl="http://cede-api.azurewebsites.net/api/Users";
+    private baseUrl="https://cede-api.azurewebsites.net/api/Users";
     constructor(private http:HttpClient){
 
     }
